@@ -1,18 +1,35 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div id="home">
+    <Collection v-bind:products="products" />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import Collection from "@/components/Collection.vue";
+import { getObjectArray } from "@/utils/methods";
+import sampleData from "@/utils/sampleData.json";
 
 export default {
   name: "home",
+  data() {
+    return {
+      products: []
+    };
+  },
+  created() {
+    this.products = getObjectArray(sampleData);
+  },
   components: {
-    HelloWorld
+    Collection
   }
 };
 </script>
+
+<style lang="scss" scoped>
+#home {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+</style>
