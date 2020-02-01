@@ -28,7 +28,7 @@
         <button>Checkout</button>
       </div>
     </template>
-    <h2 v-else>You have no items in cart - {{ cartNotEmpty }}</h2>
+    <h2 v-else>You have no items in cart</h2>
   </div>
 </template>
 
